@@ -85,6 +85,7 @@ M.stream = function(prompt, opts)
 					if line == "[DONE]" then
 						break
 					end
+					print(line)
 					local json = vim.fn.json_decode(line)
 					local chunk = json.choices[1].delta.content
 
