@@ -16,6 +16,8 @@ M.setup = function(opts)
 
 	-- Setup API key
 	vim.g.gpt_api_key = api_key
+	-- Setup model
+	vim.g.gpt_model = opts.model or "gpt-3.5-turbo"
 end
 
 --[[
@@ -40,7 +42,7 @@ M.stream = function(prompt, opts)
 
 	local payload = {
 		stream = true,
-		model = "gpt-3.5-turbo",
+		model = vim.g.gpt_model,
 		messages = { { role = "user", content = prompt } },
 	}
 
