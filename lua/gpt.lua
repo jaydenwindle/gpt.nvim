@@ -78,7 +78,6 @@ M.stream = function(prompt, opts)
 	vim.g.gpt_jobid = vim.fn.jobstart(command, {
 		stdout_buffered = false,
 		on_stdout = function(_, data, _)
-			print(data)
 			for _, line in ipairs(data) do
 				if line ~= "" then
 					-- Strip token to get down to the JSON
